@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Bienvenue</title>
+    <style>
+        body.closed {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 20vh;
+            font-size: 24px;
+        }
+
+        body.blue {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        button.jouer {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            display: none; /* Masquer initialement le bouton "Jouer" */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue sur notre site !</h1>
+    <script>
+        function fermerSite() {
+            var confirmation = confirm("Êtes-vous sûr de vouloir fermer le site ?");
+            if (confirmation) {
+                alert("Bien essayé, mais ce n'est pas comme ça que tu vas t'en sortir !");
+                document.body.classList.add('closed');
+                document.getElementById('jouerBtn').style.display = 'inline';
+                document.getElementById('fermerBtn').style.display = 'none';
+            }
+        }
+
+        function jouer() {
+            var reponse = prompt("Que vaut 1 + 1 ?");
+            if (reponse === "11") {
+                alert("Félicitations ! Vous avez la bonne réponse.");
+            } else {
+                alert("Tu es tellement nul que ta tête pense à des frites à la nuit !");
+            }
+        }
+        
+        var nom_utilisateur = prompt("Quel est votre nom ?");
+        if (nom_utilisateur != null && nom_utilisateur != "") {
+            document.write("<p>Bonjour, " + nom_utilisateur + "! Bienvenue sur notre site.</p>");
+        } else {
+            document.write("<p>Bienvenue sur notre site!</p>");
+        }
+    </script>
+
+    <button id="fermerBtn" onclick="fermerSite()">Fermer le site</button>
+    <button id="jouerBtn" class="jouer" onclick="jouer()">Jouer</button>
+</body>
+</html>
+ _redirects
+
